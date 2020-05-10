@@ -8,6 +8,8 @@ For the purpose of this project, we added a speed parameter to represent the spe
 The 2-tuple will be used by the algorithms to calculate the time it will take to reach from one node to another.
 '''
 
+
+
 #Node class
 class Vertex:
     def __init__(self,n):
