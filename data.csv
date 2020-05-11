@@ -1,0 +1,13 @@
+first_town,second_town,distance,speed
+Arecibo,San Juan,20,45
+San Juan,Fajardo,20,45
+San Juan,Caguas,10,40
+San Juan,Mayaguez,60,65
+Caguas,Ponce,20,60
+Caguas,Cayey,0,0
+Fajardo,Ponce,0,0
+Mayaguez,Ponce,50,60
+Mayaguez,Cabo Rojo,0,0
+Rincon,Arecibo,0,0
+Rincon,Mayaguez,0,0
+Cabo Rojo,Ponce,0,0
