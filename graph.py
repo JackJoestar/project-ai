@@ -7,6 +7,7 @@ This is a graph module which will be used to create undirected weighted graphs.
 For the purpose of this project, we added a speed parameter to represent the speed limit between two nodes.
 The 2-tuple will be used by the algorithms to calculate the time it will take to reach from one node to another.
 '''
+from _collections_abc import Iterable
 
 
 
@@ -21,7 +22,7 @@ class Vertex:
             self.neighbors.update({v:(weight,speed)})
 
 #Graph class to carry nodes
-class Graph:
+class Graph():
     vertices = {}
     
     def add_vertex(self,vertex):
@@ -43,8 +44,22 @@ class Graph:
     def print_graph(self):
         for key in sorted(list(self.vertices.keys())):
             print(key + str(self.vertices[key].neighbors))
+    
+    def get_vertices(self):
+        return self.vertices
+    
+    '''@abstractmethod'''
+    '''def __iter__(self):
+        return Graph_Iterator(self)'''
             
 
+'''class Graph_Iterator():
+    def __init__(self):
+        self._vertices = Graph.get_vertices(self)
+        self._index = 0
+    
+    def __next__'''
+        
 #Uncomment to test functionality
 '''g = Graph()
 a = Vertex('A')
