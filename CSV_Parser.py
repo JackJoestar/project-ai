@@ -70,6 +70,5 @@ def edit_data(file_path='data.csv',editfirst_town=None,editsecond_town=None,edit
         return True
     return False
 
-#read_csv_file()
 
 

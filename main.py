@@ -1,8 +1,4 @@
-'''
-Created on May 11, 2020
 
-@author: MarshallDMetal
-'''
 from graph import *
 from CSV_Parser import *
 from csv import DictReader
@@ -27,14 +23,7 @@ def main():
             
             else:
                 graph.add_edge(line['first_town'], line['second_town'], line['distance'], line['speed'])
-                
-                
-               # graph.add_edge(line['first_town'], v, weight, speed)
-                #print(line['first_town'])
-        
-     #   for line in reader:
-     #       if line['first_town'] in graph.get_vertices():
-     #           graph.add_edge(line['first_town'], line['second_town'], line['distance'], line['speed'])
+
         
         graph.print_graph()
             
