@@ -2,10 +2,8 @@
 #@authors: John Hernandez, Naomy Morales, Luis Diaz
 #Created May 9,2020
 from _collections_abc import Iterable
-import components
 import math
-from graph import raph, Node
-from utils import probability
+import random
 import numpy as np
 import sys
 
@@ -106,7 +104,7 @@ g.print_graph()
 g.simulated_annealing_full( 'A', 'C')
 g.a_star_search('A','C')
 
-
+#Second heuristic function
 def h_x(self,start, goal):
     x1, y1 = (start)
     x2, y2 = (goal)
@@ -127,11 +125,14 @@ def choices(neighbors_list,rand):
     
     return neighbors_list[choice]
 
+def probability(p):
+    return p > random.uniform(0.0, 1.0)
+
 def simulated_annealing_full(graph, start, goal, rand, schedule=exp_schedule()):
 
     states = []
-    start_node = Node(start,None)
-    current = Node(start, None)
+    start_node = Vertex(start)
+    current = Vertex(start)
 
     for t in range(sys.maxsize):
         
@@ -152,10 +153,10 @@ def simulated_annealing_full(graph, start, goal, rand, schedule=exp_schedule()):
         if not neighbors:
             return current.name
         
-        next_choice = Node(choices(list(neighbors),rand), current)
+        next_choice = Vertex(choices(list(neighbors),rand))
 
-        current.f = components.componentAdjustments(rand, h_x(start.get(), goal))
-        next_choice.f = components.componentAdjustments(rand, h_x(start.get(), goal))
+        current.f = h_x(start.get(), goal)
+        next_choice.f = h_x(start.get(), goal)
 
         delta_e = current.f - next_choice.f
         if delta_e > 0 or probability(np.exp(delta_e / T)):
