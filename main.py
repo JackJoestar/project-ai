@@ -1,5 +1,5 @@
 
-#Authors: John Hernandez,Naomy Morales, Luis Diaz
+#@authors: John Hernandez,Naomy Morales, Luis Diaz
 
 from graph import *
 from CSV_Parser import *

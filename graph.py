@@ -1,5 +1,6 @@
 
-#Authors: John Hernandez,Naomy Morales, Luis Diaz
+#@authors: John Hernandez,Naomy Morales, Luis Diaz
+#Created May 9,2020
 from _collections_abc import Iterable
 
 #Node class

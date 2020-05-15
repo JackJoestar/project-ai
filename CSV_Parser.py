@@ -1,4 +1,4 @@
-#Authors: John Hernandez,Naomy Morales, Luis Diaz
+#@authors: John Hernandez,Naomy Morales, Luis Diaz
 
 import csv
 import shutil
