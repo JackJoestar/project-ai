@@ -24,4 +24,4 @@ If no interpreter for the project appears,add  an interpreter either an existing
   After you have an interpreter configured: 
   - Click on a file, and wait for errors, then pycharm with notify to install requirements.
   - Install the requirements, these will be installed automatically.
-  With this, the process of installing the project will be completed.
+  With this, the process of installing the project should be completed.
