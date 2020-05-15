@@ -1,3 +1,5 @@
+#Authors: John Hernandez,Naomy Morales, Luis Diaz
+
 import csv
 import shutil
 from tempfile import NamedTemporaryFile
@@ -8,19 +10,20 @@ def create_graph():
         fieldnames=['first_town','second_town','distance','speed']
         csv_writer=csv.DictWriter(csv_file,fieldnames=fieldnames)
         csv_writer.writeheader()
-
-        csv_writer.writerow({'first_town':'Arecibo','second_town':'San Juan','distance':20,'speed':45})
-        csv_writer.writerow({'first_town': 'San Juan', 'second_town': 'Fajardo', 'distance': 20, 'speed': 45})
-        csv_writer.writerow({'first_town': 'San Juan', 'second_town': 'Caguas', 'distance': 10, 'speed': 40})
-        csv_writer.writerow({'first_town': 'San Juan', 'second_town': 'Mayaguez', 'distance': 60, 'speed': 65})
-        csv_writer.writerow({'first_town': 'Caguas', 'second_town': 'Ponce', 'distance': 20, 'speed': 60})
-        csv_writer.writerow({'first_town': 'Caguas', 'second_town': 'Cayey', 'distance': 0, 'speed': 0})
-        csv_writer.writerow({'first_town': 'Fajardo', 'second_town': 'Ponce', 'distance': 0, 'speed': 0})
-        csv_writer.writerow({'first_town': 'Mayaguez', 'second_town': 'Ponce', 'distance': 50, 'speed': 60})
-        csv_writer.writerow({'first_town': 'Mayaguez', 'second_town': 'Cabo Rojo', 'distance': 0, 'speed': 0})
-        csv_writer.writerow({'first_town': 'Rincon', 'second_town': 'Arecibo', 'distance': 0, 'speed': 0})
-        csv_writer.writerow({'first_town': 'Rincon', 'second_town': 'Mayaguez', 'distance': 0, 'speed': 0})
-        csv_writer.writerow({'first_town': 'Cabo Rojo', 'second_town': 'Ponce', 'distance': 0, 'speed': 0})
+#Creating a graph using towns of Puerto Rico
+#The distance is based on miles and the speed is the maximum speed.
+        csv_writer.writerow({'first_town':'Arecibo','second_town':'San Juan','distance':59,'speed':45})
+        csv_writer.writerow({'first_town': 'San Juan', 'second_town': 'Fajardo', 'distance': 37, 'speed': 45})
+        csv_writer.writerow({'first_town': 'San Juan', 'second_town': 'Caguas', 'distance': 19, 'speed': 40})
+        csv_writer.writerow({'first_town': 'San Juan', 'second_town': 'Mayaguez', 'distance': 99, 'speed': 65})
+        csv_writer.writerow({'first_town': 'Caguas', 'second_town': 'Ponce', 'distance': 54, 'speed': 60})
+        csv_writer.writerow({'first_town': 'Caguas', 'second_town': 'Cayey', 'distance': 15, 'speed': 60})
+        csv_writer.writerow({'first_town': 'Fajardo', 'second_town': 'Ponce', 'distance': 64, 'speed': 60})
+        csv_writer.writerow({'first_town': 'Mayaguez', 'second_town': 'Ponce', 'distance': 49, 'speed': 60})
+        csv_writer.writerow({'first_town': 'Mayaguez', 'second_town': 'Cabo Rojo', 'distance': 9, 'speed': 50})
+        csv_writer.writerow({'first_town': 'Rincon', 'second_town': 'Arecibo', 'distance': 53, 'speed': 50})
+        csv_writer.writerow({'first_town': 'Rincon', 'second_town': 'Mayaguez', 'distance': 14, 'speed': 50})
+        csv_writer.writerow({'first_town': 'Cabo Rojo', 'second_town': 'Ponce', 'distance': 46, 'speed': 50})
 
 #Reading a CSV file
 def read_csv_file(file='data.csv'):
@@ -29,7 +32,7 @@ def read_csv_file(file='data.csv'):
         for line in reader:
             print(line)
 
-def get_length(file_path='data.csv'):
+def get_length(file_path='data.csv'): #allows you to get the length of a csv file
     with open(file_path) as csv_file:
         reader = csv.DictReader(csv_file)
         readerlist=list(reader)

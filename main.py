@@ -1,7 +1,10 @@
 
+#Authors: John Hernandez,Naomy Morales, Luis Diaz
+
 from graph import *
 from CSV_Parser import *
 from csv import DictReader
+
 
 def main():
     graph = Graph()
