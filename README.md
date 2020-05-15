@@ -17,8 +17,8 @@
  -Copy the repository's url.
  -Open pycharm in your device:
  -In the main menu, click get from version control and paste your github's repo url.
-  -Pycharm with create the virtual environment and it will open the project.
-  -If no interpreter for the project appears,add  an interpreter either an existing one that uses python 3.8 or higher or you can configure your own interpreter. 
+ -Pycharm with create the virtual environment and it will open the project.
+If no interpreter for the project appears,add  an interpreter either an existing one that uses python 3.8 or higher or you can configure your own interpreter. 
   If you need help with this step use this link for further instructions: https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html#
 
   After you have an interpreter configured: 
