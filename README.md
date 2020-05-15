@@ -7,12 +7,12 @@
  - Extract the zip file
  - Before opening project, open the terminal and cd into the project folder. Run pip install -r requirements.txt
  - If you don't have pip installed, install it first to your device and later run the command.
- - Once all the packages are installed, you can open the project in pycharm or any ide or text editor that allows python  language support.
+ - Once all the packages are installed, you can open the project in Pycharm or any ide or text editor that allows python  language support.
 
  In the case that you open the project in pycharm and the packages are not installed:
  You will receive a notification from pycharm to install requirements, click it and it will automatically install all the necessary packages needed for the project. 
 
- Alternative installation steps for installing in pycharm:
+ Alternative installation steps for installing in Pycharm:
  - Fork github repository to your github.
  - Copy the repository's url.
  - Open pycharm in your device:
