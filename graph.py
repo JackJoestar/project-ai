@@ -1,7 +1,13 @@
 
-#@authors: John Hernandez,Naomy Morales, Luis Diaz
+#@authors: John Hernandez, Naomy Morales, Luis Diaz
 #Created May 9,2020
 from _collections_abc import Iterable
+import components
+import math
+from graph import raph, Node
+from utils import probability
+import numpy as np
+import sys
 
 #Node class
 class Vertex:
@@ -97,46 +103,62 @@ g.add_vertex(Vertex('C'))
 g.add_edge('A','C',20,60)
 g.print_graph()
 
+g.simulated_annealing_full( 'A', 'C')
 g.a_star_search('A','C')
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-temp = 30
-
 def h_x(self,start, goal):
-    frontier = []
-    explored = []
-    upper = self.vertices(start)
-    lower = self.vertices(goal)
-    frontier.append(upper)
-    while len(frontier) > 0:
-        frontier.sort()
-    return 0
+    x1, y1 = (start)
+    x2, y2 = (goal)
+
+    x = int(x2) - int(x1)
+    y = int(y2) - int(y1)
+    return int(math.sqrt((x ** 2) + (y ** 2)))
 
 
+def exp_schedule(k=200, lam=0.005, limit=100):
+    
+    return lambda t: (k * np.exp(-lam * t) if t < limit else 0)
 
 
+def choices(neighbors_list,rand):
+    
+    choice = rand.randrange(len(neighbors_list))
+    
+    return neighbors_list[choice]
 
+def simulated_annealing_full(graph, start, goal, rand, schedule=exp_schedule()):
 
+    states = []
+    start_node = Node(start,None)
+    current = Node(start, None)
 
+    for t in range(sys.maxsize):
+        
+        states.append(current.name)
+        
+        T = schedule(t)
+        
+        if T == 0:
+            path = []
+            while current != start_node:
+                path.append(current.name + ': ' + str(current.f))
+                current = current.parent
+            path.append(start_node.name + ': ' + str(start_node.f))
+            return path[::-1]
+        
+        neighbors = graph.get(current.name)
+        
+        if not neighbors:
+            return current.name
+        
+        next_choice = Node(choices(list(neighbors),rand), current)
 
+        current.f = components.componentAdjustments(rand, h_x(start.get(), goal))
+        next_choice.f = components.componentAdjustments(rand, h_x(start.get(), goal))
 
+        delta_e = current.f - next_choice.f
+        if delta_e > 0 or probability(np.exp(delta_e / T)):
+            current = next_choice
 
 
