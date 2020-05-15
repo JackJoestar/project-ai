@@ -3,7 +3,7 @@
  Simulated Annealing vs. A*: Who Travels Down the Best Roads?
 
  Installation Steps:
- - Downloading github repo zip
+ - Downloading github repository zip
  - Extract the zip file
  - Before opening project, open the terminal and cd into the project folder. Run pip install -r requirements.txt
  - If you don't have pip installed, install it first to your device and later run the command.
