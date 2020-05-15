@@ -139,8 +139,17 @@ def a_star_search(graph,start,end):
             frontier.append(neighbor)
     return None
 
+temp = 30
 
-
+def h_x(self,start, goal):
+    frontier = []
+    explored = []
+    upper = self.vertices(start)
+    lower = self.vertices(goal)
+    frontier.append(upper)
+    while len(frontier) > 0:
+        frontier.sort()
+    return 0
 
 
 
